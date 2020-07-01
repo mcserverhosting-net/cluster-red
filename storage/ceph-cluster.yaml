@@ -1,0 +1,41 @@
+apiVersion: ceph.rook.io/v1
+kind: CephCluster
+metadata:
+  name: rook-ceph
+  namespace: rook-ceph
+spec:
+  cephVersion:
+    image: ceph/ceph:v14.2.9
+  dataDirHostPath: /var/lib/rook
+  mon:
+    count: 3
+    allowMultiplePerNode: false
+  crashCollector:
+    disable: true
+  dashboard:
+    enabled: true
+  removeOSDsIfOutAndSafeToRemove: true
+  cleanupPolicy:
+    deleteDataDirOnHosts: ""
+  resources:
+    osd:
+      limits:
+        memory: 3Gi
+      requests:
+        memory: 3Gi
+  storage:
+    useAllNodes: false
+    useAllDevices: true
+    nodes:
+    - name: "s1"
+      config:
+        encryptedDevice: "true"
+    - name: "s2"
+      config:
+        encryptedDevice: "true"
+    - name: "s3"
+      config:
+        encryptedDevice: "true"
+  disruptionManagement:
+    managePodBudgets: true
+    osdMaintenanceTimeout: 30
