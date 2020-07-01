@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: alpine-deployment
+  labels:
+    k8s-app: alpine-deployment
+spec:
+  selector:
+    matchLabels:
+      name: alpine-deployment
+  template:
+    metadata:
+      labels:
+        name: alpine-deployment
+    spec:
+      containers:
+      - name: fluentd-elasticsearch
+        image: alpine
+        command:
+        - sleep
+        - "3600"

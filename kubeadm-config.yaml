@@ -1,0 +1,24 @@
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: InitConfiguration
+nodeRegistration:
+  kubeletExtraArgs:
+    cgroup-driver: "systemd"
+    cpu-cfs-quota: "false"
+    fail-swap-on: "false"
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+kubernetesVersion: stable
+apiServer:
+  extraArgs:
+    oidc-issuer-url: https://keycloak.sfxworks.net/auth/realms/mcsh
+    oidc-client-id: account
+    oidc-username-claim: email
+    service-node-port-range: 25565-32767
+networking:
+  dnsDomain: cluster.mcserverhosting.red
+controlPlaneEndpoint: cluster.mcserverhosting.red:6443
+---
+apiVersion: kubeproxy.config.k8s.io/v1alpha1
+kind: KubeProxyConfiguration
+mode: ipvs
