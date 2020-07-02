@@ -1,0 +1,13 @@
+network:
+  version: 2
+  ethernets:
+    ens3: 
+      dhcp6: false
+      match:
+        name: ens3 
+      addresses:
+        - "ADDRESS/RANGE"
+      gateway6: "GATEWAY"
+      routes:
+        - to: "GATEWAY"
+          scope: link 
