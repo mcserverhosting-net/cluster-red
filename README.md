@@ -21,7 +21,7 @@ cluster.mcserverhosting.red       |
       +-------v-------+   +-------v-------+   +-------v-------+
       |               |   |               |   |               |
       |               |   |               |   |               |
-      |  rook-ceph-1  |   |  rook-ceph-1  |   |  rook-ceph-1  |
+      |  rook-ceph-1  |   |  rook-ceph-2  |   |  rook-ceph-3  |
       |               |   |               |   |               |
       |               |   |               |   |               |
       +---------------+   +---------------+   +---------------+
