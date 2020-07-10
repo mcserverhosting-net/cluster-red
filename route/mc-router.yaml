@@ -29,13 +29,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mc-router
+  namespace: default
+  annotations:
+    metallb.universe.tf/address-pool: default
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - targetPort: proxy
     name: proxy
     port: 25565
-    nodePort: 25565
   selector:
     run: mc-router
 ---
@@ -45,6 +47,7 @@ metadata:
   labels:
     run: mc-router
   name: mc-router
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -56,12 +59,6 @@ spec:
       labels:
         run: mc-router
     spec:
-      nodeSelector:
-        node-role.kubernetes.io/master: ""
-      tolerations:
-      - key: "node-role.kubernetes.io/master"
-        operator: "Exists"
-        effect: "NoSchedule"
       serviceAccountName: mcsh-operator
       containers:
       - image: itzg/mc-router:1.10.2
