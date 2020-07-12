@@ -295,7 +295,7 @@ global:
   # encryption is the encryption specific configuration
   encryption:
     # enabled enables encryption
-    enabled: true
+    enabled: false
 
     # keyFile is the name of the key file inside the Kubernetes secret
     # configured via secretName
