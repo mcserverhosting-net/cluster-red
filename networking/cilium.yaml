@@ -388,7 +388,7 @@ global:
 
     # masterDevice is the name of the device to use to attach secondary IPVLAN
     # devices
-    # masterDevice: eth0
+    #masterDevice: 
 
   # pprof is the GO pprof configuration
   pprof:
@@ -513,7 +513,7 @@ global:
 
   ipam:
     operator:
-      clusterPoolIPv4PodCIDR: "10.0.0.0/16"
+      clusterPoolIPv4PodCIDR: "10.244.0.0/16"
       clusterPoolIPv4MaskSize: 24
       clusterPoolIPv6PodCIDR: "fdb7:8a4e:a021:2608::/104"
       clusterPoolIPv6MaskSize: 120

@@ -16,17 +16,7 @@ network:
       routes:
       - to: 2607:5300:0203:77FF:FF:FF:FF:FF
         scope: link
-    enp5s0f1:
-      addresses:
-      - 51.222.70.226/32
-      gateway4: 51.222.70.254
-      routes:
-      - to: 51.222.70.254
-        scope: link
-      nameservers:
-        addresses:
-        - 1.1.1.2
-        - 1.0.0.2
+    enp5s0f1: {}
   vlans:
     vlan99:
       id: 99

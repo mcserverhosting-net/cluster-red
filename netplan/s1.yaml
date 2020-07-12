@@ -2,5 +2,10 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    ens7:
-      dhcp4: true
+    eno4: {}
+  vlans:
+    vlan99:
+      id: 99
+      link: eno4
+      addresses:
+      - 192.168.0.4/16

@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+  namespace: mcsh
+spec:
+  acme:
+    email: services@sfxworks.net
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: mcsh
+    solvers:
+    - http01:
+        ingress:
+          class: contour

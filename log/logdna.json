@@ -1,0 +1,29 @@
+{
+    "username": "LogDNA",
+    "avatar_url": "https://i.imgur.com/4M34hi2.png",
+    "embeds": [
+      {
+        "author": {
+          "name": "LogDNA",
+          "url": "https://app.logdna.com/d966a294c3/logs/view/e78c8d3b9c?levels=error",
+          "icon_url": "https://logdna.com/wp-content/themes/logdna/src/img/logo.svg"
+        },
+        "title": "Alert from {{ name }}",
+        "url": "https://google.com/",
+        "description": "`{{ lines }}`",
+        "color": 15258703,
+        "fields": [
+          {
+            "name": "Matches",
+            "value": "{{ matches }}",
+            "inline": true
+          },
+          {
+            "name": "Security Level",
+            "value": "{{ level }}",
+            "inline": true
+          }
+        ]
+      }
+    ]
+  }
