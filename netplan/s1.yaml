@@ -2,10 +2,12 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    eno4: {}
-  vlans:
-    vlan99:
-      id: 99
-      link: eno4
+    eno4:
+      match:
+        macaddress: 0c:c4:7a:c5:a7:31
+      gateway4: 51.222.70.254
       addresses:
-      - 192.168.0.4/16
+      - 51.222.70.227/32
+      routes:
+      - to: 51.222.70.254
+        scope: link

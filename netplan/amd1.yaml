@@ -2,24 +2,12 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    enp5s0f0:
-      dhcp6: false
+    enp5s0f1:
       match:
-        name: enp5s0f0
+        macaddress: a0:42:3f:44:5c:7d
+      gateway4: 51.222.70.254
       addresses:
-      - 2607:5300:0203:7712::/64
-      gateway6: 2607:5300:0203:77FF:FF:FF:FF:FF
-      nameservers:
-        addresses:
-        - 2606:4700:4700::1112
-        - 2606:4700:4700::1002
+      - 51.222.70.225/32
       routes:
-      - to: 2607:5300:0203:77FF:FF:FF:FF:FF
+      - to: 51.222.70.254
         scope: link
-    enp5s0f1: {}
-  vlans:
-    vlan99:
-      id: 99
-      link: enp5s0f1
-      addresses: 
-      - 192.168.0.2/16

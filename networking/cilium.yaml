@@ -116,7 +116,7 @@ global:
 
   # ipv6 is the IPv6 addressing configuration
   ipv6:
-    enabled: true
+    enabled: false
 
   # debug enables debugging mode
   debug:
@@ -515,8 +515,6 @@ global:
     operator:
       clusterPoolIPv4PodCIDR: "10.244.0.0/16"
       clusterPoolIPv4MaskSize: 24
-      clusterPoolIPv6PodCIDR: "fdb7:8a4e:a021:2608::/104"
-      clusterPoolIPv6MaskSize: 120
 
   proxy:
     # Regular expression matching compatible Istio sidecar istio-proxy
